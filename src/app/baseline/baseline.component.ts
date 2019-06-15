@@ -1,4 +1,6 @@
+import { BaselineService } from './baseline.service';
 import { Component, OnInit } from '@angular/core';
+import { Baseline } from './baseline';
 
 @Component({
   selector: 'app-baseline',
@@ -7,9 +9,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BaselineComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private baselineService: BaselineService) { }
+  
   ngOnInit() {
+    this.getAllBaseline();
   }
+
+  baselineTableColumnNames: string[] = [
+    'Id',
+    'Name',
+    'Module Id',
+    'Type',
+    'Version',
+    'Created by',
+    'Created on',
+    'Modified by',
+    'Modified on' 
+  ];
+
+  baselines: Baseline[];
+
+
+  getAllBaseline(){
+    console.log('In Baseline Component getAllBaseline');
+    this.baselineService.getAllBaseline().subscribe(response =>this.handleSuccesfullResponse(response));
+   }
+
+   handleSuccesfullResponse(response: Baseline[]){
+    this.baselines = response;
+    console.log(this.baselines);
+  }
+
+
+
 
 }

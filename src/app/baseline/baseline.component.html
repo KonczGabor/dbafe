@@ -1,3 +1,27 @@
 <p>
   baseline works!
 </p>
+
+<table>
+  <caption>
+    Baselines:
+  </caption>
+  <thead>
+    <th *ngFor="let columnName of baselineTableColumnNames">
+      {{ columnName }}
+    </th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let baseline of baselines">
+      <td>{{ baseline.id }}</td>
+      <td>{{ baseline.name }}</td>
+      <td>{{ baseline.module_id }}</td>
+      <td>{{ baseline.type }}</td>
+      <td>{{ baseline.version }}</td>
+      <td>{{ baseline.created_by }}</td>
+      <td>{{ baseline.created_on | date }}</td>
+      <td>{{ baseline.modified_by }}</td>
+      <td>{{ baseline.modified_on | date }}</td>
+    </tr>
+  </tbody>
+</table>

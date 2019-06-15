@@ -15,7 +15,7 @@ export class ModuleComponent implements OnInit {
     this.getAllModule();
   }
 
-  moduleTableColumnNames: string[] = ['Id', 'Name', 'Module Id', 'Created by', 'Created on', 'Modified by', 'Modified on'];
+  moduleTableColumnNames: string[] = ['Action', 'Id', 'Name', 'Module Id', 'Created by', 'Created on', 'Modified by', 'Modified on'];
 
   modules: Module[];
 
