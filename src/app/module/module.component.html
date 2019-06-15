@@ -1,0 +1,23 @@
+<p>
+  module works!
+</p>
+
+<table>
+  <caption>Modules:</caption>
+  <thead>
+   
+     <th  *ngFor="let columnName of moduleTableColumnNames">{{columnName}}</th>
+   
+  </thead>
+  <tbody>
+    <tr *ngFor="let module of modules">
+      <td>{{module.id}}</td>
+      <td>{{module.name}}</td>
+      <td>{{module.module_id}}</td>
+      <td>{{module.created_by}}</td>
+      <td>{{module.created_on | date }}</td>
+      <td>{{module.modified_by}}</td>
+      <td>{{module.modified_on | date }}</td>
+    </tr>
+  </tbody>
+</table>
