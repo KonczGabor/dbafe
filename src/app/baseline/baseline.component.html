@@ -2,6 +2,10 @@
   baseline works!
 </p>
 
+<button (click)="clearBaselineTable()" class="btn btn-warning">
+    Delete Baselines
+</button>
+
 <table>
   <caption>
     Baselines:
@@ -15,13 +19,13 @@
     <tr *ngFor="let baseline of baselines">
       <td>{{ baseline.id }}</td>
       <td>{{ baseline.name }}</td>
-      <td>{{ baseline.module_id }}</td>
+      <td>{{ baseline.moduleId }}</td>
       <td>{{ baseline.type }}</td>
       <td>{{ baseline.version }}</td>
-      <td>{{ baseline.created_by }}</td>
-      <td>{{ baseline.created_on | date }}</td>
-      <td>{{ baseline.modified_by }}</td>
-      <td>{{ baseline.modified_on | date }}</td>
+      <td>{{ baseline.createdBy }}</td>
+      <td>{{ baseline.createdOn | date }}</td>
+      <td>{{ baseline.modifiedBy }}</td>
+      <td>{{ baseline.modifiedOn | date }}</td>
     </tr>
   </tbody>
 </table>
