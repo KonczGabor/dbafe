@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ModuleComponent } from './module/module.component';
 import { BaselineComponent } from './baseline/baseline.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MainCanvasComponent } from './main-canvas/main-canvas.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     MenuComponent,
     FooterComponent,
     ModuleComponent,
-    BaselineComponent
+    BaselineComponent,
+    MainCanvasComponent
   ],
   imports: [
     BrowserModule, HttpClientModule

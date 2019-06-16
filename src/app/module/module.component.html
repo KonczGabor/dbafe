@@ -2,27 +2,30 @@
   module works!
 </p>
 
+<p>Selected Module Id: {{ selectedModuleId }}</p>
+
 <table>
-  <caption>Modules:</caption>
+  <caption>
+    Modules:
+  </caption>
   <thead>
-   
-     <th  *ngFor="let columnName of moduleTableColumnNames">{{columnName}}</th>
-   
+    <th *ngFor="let columnName of moduleTableColumnNames">
+      {{ columnName }}
+    </th>
   </thead>
   <tbody>
-    <tr *ngFor="let module of modules">
-      <td>
-        <button class="btn btn-warning">
-            Get Baselines
-        </button>
-      </td>
-      <td>{{module.id}}</td>
-      <td>{{module.name}}</td>
-      <td>{{module.moduleId}}</td>
-      <td>{{module.createdBy}}</td>
-      <td>{{module.createdOn | date }}</td>
-      <td>{{module.modifiedBy}}</td>
-      <td>{{module.modifiedOn | date }}</td>
+    <tr
+      (click)="getModuleId(module.moduleId)"
+      *ngFor="let module of modules"
+      class="cursor"
+    >
+      <td>{{ module.id }}</td>
+      <td>{{ module.name }}</td>
+      <td>{{ module.moduleId }}</td>
+      <td>{{ module.createdBy }}</td>
+      <td>{{ module.createdOn | date }}</td>
+      <td>{{ module.modifiedBy }}</td>
+      <td>{{ module.modifiedOn | date }}</td>
     </tr>
   </tbody>
 </table>
