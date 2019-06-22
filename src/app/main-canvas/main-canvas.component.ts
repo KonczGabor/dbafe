@@ -23,6 +23,10 @@ export class MainCanvasComponent implements OnInit {
       .subscribe(response => this.handleSuccesfullResponse(response));
   }
 
+  handleBaselineAnswer(isBaselineVisible: string) {
+    console.log("visibility " + isBaselineVisible);
+  }
+
   handleSuccesfullResponse(response: Baseline[]) {
     this.baselines = response;
     console.log("Hekkkk: " + this.baselines);

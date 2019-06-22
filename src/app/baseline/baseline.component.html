@@ -20,7 +20,11 @@
     </th>
   </thead>
   <tbody>
-    <tr *ngFor="let baseline of baselines">
+    <tr
+      *ngFor="let baseline of baselines"
+      (click)="navigateBack()"
+      class="cursor"
+    >
       <td>{{ baseline.id }}</td>
       <td>{{ baseline.name }}</td>
       <td>{{ baseline.moduleId }}</td>

@@ -1,5 +1,5 @@
 import { BaselineService } from "./baseline.service";
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Baseline } from "./baseline";
 
 @Component({
@@ -14,6 +14,9 @@ export class BaselineComponent implements OnInit {
     //this.getAllBaseline();
     this.getBaselinesByModuleId("module_id_1");
   }
+  @Output() isBaselineVisibletoEmit = new EventEmitter<string>();
+
+  isBaselineVisible = "true";
 
   baselineTableColumnNames: string[] = [
     "Id",
@@ -41,6 +44,11 @@ export class BaselineComponent implements OnInit {
     this.baselineService
       .getBaselinesByModuleId(moduleId)
       .subscribe(response => this.handleSuccesfullResponse(response));
+  }
+
+  navigateBack() {
+    console.log("In navigate back");
+    this.isBaselineVisibletoEmit.emit(this.isBaselineVisible);
   }
 
   handleSuccesfullResponse(response: Baseline[]) {
